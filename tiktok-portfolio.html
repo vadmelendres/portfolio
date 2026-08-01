@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Z Coworking - Video Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
+            color: white;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.35);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 107, 107, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-icon {
+            width: 8px;
+            height: 8px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            border-color: rgba(255, 107, 107, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%; /* 9:16 aspect ratio */
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.3rem;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+            color: #ffffff;
+        }
+
+        .video-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .view-count {
+            font-weight: 600;
+            color: #ff8c42;
+        }
+
+        .viral-badge {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
+            color: white;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #666;
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 107, 107, 0.2);
+            border-top: 3px solid #ff6b6b;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(20, 20, 20, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Error Message */
+        .error-message {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            color: #ff8c42;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Startup Z Coworking</h1>
+            <p class="tagline">Video Content Portfolio</p>
+            <a href="https://www.tiktok.com/@startupzcoworkingph" class="cta-button" target="_blank">View Full Profile</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Viral Videos Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-icon"></span>
+                🔥 Viral Videos
+            </h2>
+            <div id="viral-videos" class="video-grid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Videos Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-icon"></span>
+                All Videos
+            </h2>
+            <div id="all-videos" class="video-grid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Startup Z Coworking. All videos produced and edited by Vad.</p>
+    </footer>
+
+    <script>
+        // Google Sheet ID and API Configuration
+        const SHEET_ID = '1XWfjUnJnVeoCw_9eT17AjT9VhIqkZVXQD4FwsyNWEsk';
+        const SHEET_RANGE = 'Sheet1!A1:D1000';
+        const API_KEY = 'AIzaSyDvwvWxnhS7zXl6T7qJsV3pJ7kLZ7k7k7k'; // Public API key (limited)
+
+        // Alternative: Using public sheet data
+        async function fetchVideosFromSheet() {
+            try {
+                // Using Google Sheets API v4
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_RANGE}?key=AIzaSyADaVLbgHW-xbSVMpKLYKcvmxAkj6dSHH0`;
+                
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data from Google Sheets');
+                }
+
+                const data = await response.json();
+                return data.values || [];
+            } catch (error) {
+                console.error('Error fetching sheet:', error);
+                return [];
+            }
+        }
+
+        function extractTikTokId(url) {
+            // Extract TikTok video ID from various URL formats
+            if (!url) return null;
+            
+            const patterns = [
+                /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[\w\.]+\/video\/(\d+)/,
+                /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/v\/(\d+)/,
+                /(?:https?:\/\/)?(?:vm\.)?tiktok\.com\/(\w+)/
+            ];
+
+            for (let pattern of patterns) {
+                const match = url.match(pattern);
+                if (match) return match[1];
+            }
+            return null;
+        }
+
+        function createVideoCard(title, tiktokUrl, viewCount, isViral) {
+            const videoId = extractTikTokId(tiktokUrl);
+            
+            if (!videoId) {
+                console.warn('Could not extract video ID from:', tiktokUrl);
+                return null;
+            }
+
+            const card = document.createElement('div');
+            card.className = 'video-card';
+
+            const embedUrl = `https://www.tiktok.com/embed/v2/${videoId}`;
+            
+            card.innerHTML = `
+                <div class="video-wrapper">
+                    <iframe src="https://www.tiktok.com/embed/v2/${videoId}" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">${title || 'Untitled Video'}</h3>
+                    <div class="video-stats">
+                        <span class="view-count">${(viewCount || 0).toLocaleString()} views</span>
+                        ${isViral ? '<span class="viral-badge">Viral 🚀</span>' : ''}
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        async function renderPortfolio() {
+            const rows = await fetchVideosFromSheet();
+            
+            if (rows.length <= 1) {
+                // Only header or empty
+                document.getElementById('viral-videos').innerHTML = `
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <div class="empty-state-icon">📹</div>
+                        <p>No videos yet. Add videos to your Google Sheet to see them here!</p>
+                    </div>
+                `;
+                document.getElementById('all-videos').innerHTML = `
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <div class="empty-state-icon">📹</div>
+                        <p>No videos yet. Add videos to your Google Sheet to see them here!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Parse data (skip header row)
+            const videos = [];
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                if (row.length >= 2 && row[1]) { // At least title and TikTok link
+                    videos.push({
+                        title: row[0] || 'Untitled',
+                        tiktokLink: row[1],
+                        viewCount: parseInt(row[2]) || 0,
+                        date: row[3] || ''
+                    });
+                }
+            }
+
+            // Sort by view count (descending)
+            videos.sort((a, b) => b.viewCount - a.viewCount);
+
+            // Separate viral (10K+) and regular videos
+            const viralVideos = videos.filter(v => v.viewCount >= 10000);
+            const allVideos = videos;
+
+            // Render viral videos
+            const viralContainer = document.getElementById('viral-videos');
+            if (viralVideos.length === 0) {
+                viralContainer.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <div class="empty-state-icon">🌟</div>
+                        <p>No viral videos yet. Keep creating!</p>
+                    </div>
+                `;
+            } else {
+                viralContainer.innerHTML = '';
+                viralVideos.forEach(video => {
+                    const card = createVideoCard(video.title, video.tiktokLink, video.viewCount, true);
+                    if (card) viralContainer.appendChild(card);
+                });
+            }
+
+            // Render all videos
+            const allContainer = document.getElementById('all-videos');
+            allContainer.innerHTML = '';
+            allVideos.forEach(video => {
+                const card = createVideoCard(video.title, video.tiktokLink, video.viewCount, video.viewCount >= 10000);
+                if (card) allContainer.appendChild(card);
+            });
+
+            // Load TikTok embed script
+            if (window.tiktok) {
+                window.tiktok.embed.lib.render(document.body);
+            } else {
+                const script = document.createElement('script');
+                script.src = 'https://www.tiktok.com/embed.js';
+                document.body.appendChild(script);
+            }
+        }
+
+        // Render on page load
+        window.addEventListener('load', renderPortfolio);
+    </script>
+</body>
+</html>
