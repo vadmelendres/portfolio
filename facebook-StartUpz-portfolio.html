@@ -372,12 +372,12 @@
             document.getElementById('openFacebookBtn').href = video.facebookLink;
             
             const embedContainer = document.getElementById('videoEmbedContainer');
-            embedContainer.innerHTML = `<iframe src="https://www.tiktok.com/embed/v2/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            embedContainer.innerHTML = `<iframe src="https://www.facebook.com/embed/v2/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
             
             document.getElementById('videoModal').classList.add('active');
             
-            if (window.tiktok && window.tiktok.embed) {
-                window.tiktok.embed.lib.render(document.getElementById('videoModal'));
+            if (window.facebook && window.facebook.embed) {
+                window.facebook.embed.lib.render(document.getElementById('videoModal'));
             }
         }
 
@@ -437,9 +437,9 @@
                 allContainer.appendChild(createVideoCard(video));
             });
 
-            // Load TikTok embed script
+            // Load Facebook embed script
             const script = document.createElement('script');
-            script.src = 'https://www.tiktok.com/embed.js';
+            script.src = 'https://www.facebook.com/embed.js';
             document.body.appendChild(script);
         }
 
