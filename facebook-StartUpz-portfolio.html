@@ -372,7 +372,16 @@
             document.getElementById('openFacebookBtn').href = video.facebookLink;
             
             const embedContainer = document.getElementById('videoEmbedContainer');
-            embedContainer.innerHTML = `<iframe src="https://www.facebook.com/embed/v2/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            embedContainer.innerHTML = `
+<iframe
+    src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(video.facebookLink)}&show_text=false"
+    width="500"
+    height="700"
+    style="border:none;overflow:hidden"
+    scrolling="no"
+    frameborder="0"
+    allowfullscreen>
+</iframe>`;
             
             document.getElementById('videoModal').classList.add('active');
             
