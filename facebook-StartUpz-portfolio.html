@@ -26,7 +26,7 @@
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #1877f2 0%, #0a66c2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -41,19 +41,19 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #1877f2 0%, #0a66c2 100%);
             color: white;
             padding: 0.9rem 2.2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.25);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 12px 35px rgba(24, 119, 242, 0.35);
         }
 
         .container {
@@ -67,7 +67,7 @@
             font-weight: 700;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid rgba(37, 99, 235, 0.25);
+            border-bottom: 2px solid rgba(24, 119, 242, 0.3);
         }
 
         .video-grid {
@@ -86,12 +86,13 @@
             text-align: center;
             text-decoration: none;
             display: block;
+            cursor: pointer;
         }
 
         .video-card:hover {
-            border-color: rgba(255, 107, 107, 0.5);
+            border-color: rgba(24, 119, 242, 0.5);
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 15px 40px rgba(24, 119, 242, 0.15);
         }
 
         .video-title {
@@ -103,17 +104,17 @@
 
         .video-stats {
             font-size: 1rem;
-            color: #2367eb;
+            color: #888;
             margin-bottom: 1.5rem;
         }
 
         .view-count {
             font-weight: 600;
-            color: #2367eb;
+            color: #1877f2;
         }
 
         .good-badge {
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #1877f2 0%, #0a66c2 100%);
             color: white;
             padding: 0.4rem 1rem;
             border-radius: 20px;
@@ -121,6 +122,21 @@
             font-weight: 700;
             text-transform: uppercase;
             margin-left: 0.5rem;
+        }
+
+        .watch-button {
+            background: linear-gradient(135deg, #1877f2 0%, #0a66c2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .video-card:hover .watch-button {
+            transform: scale(1.05);
         }
 
         .video-modal {
@@ -165,23 +181,18 @@
         }
 
         .close-modal:hover {
-            color: #ff8c42;
+            color: #1877f2;
             transform: scale(1.2);
         }
 
         .video-embed-container {
             width: 100%;
-            padding-top: 177.78%;
-            position: relative;
             margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         .video-embed-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
             border-radius: 8px;
         }
 
@@ -193,13 +204,13 @@
         }
 
         .modal-video-stats {
-            color: #64748B;
+            color: #888;
             font-size: 1rem;
         }
 
         .open-facebook-button {
             display: inline-block;
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #1877f2 0%, #0a66c2 100%);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
@@ -217,7 +228,7 @@
             background: rgba(20, 20, 20, 0.95);
             text-align: center;
             padding: 2rem;
-            color: #64748B;
+            color: #666;
         }
 
         @media (max-width: 768px) {
@@ -239,7 +250,7 @@
     <header>
         <h1>StartUpz Coworking</h1>
         <p class="tagline">Video Content Portfolio</p>
-        <a href="https://www.facebook.com/StartUpzCoWorkingSpace/" class="cta-button" target="_blank">View Full Profile on Facebook</a>
+        <a href="https://www.facebook.com/YOUR-FACEBOOK-PAGE" class="cta-button" target="_blank">View Full Profile on Facebook</a>
     </header>
 
     <main class="container">
@@ -270,130 +281,42 @@
 
     <script>
         // ============================================
-        // EDIT YOUR VIDEOS HERE
+        // EDIT YOUR FACEBOOK VIDEOS HERE
+        // Replace Facebook links with your video URLs
+        // Format: https://www.facebook.com/[page-name]/videos/[video-id]/
         // ============================================
         const videos = [
             {
-                title: "7-29-26 (1) voiceover",
-                facebookLink: "https://www.facebook.com/StartUpzCoWorkingSpace/videos/1229082502654808/",
-                viewCount: 402,
-                date: "July 29-26"
+                title: "Video 1",
+                facebookLink: "https://www.facebook.com/reel/1229082502654808/",
+                viewCount: 276,
+                date: "7-8-26"
             },
             {
-                title: "7-29-26 (2) voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1E6eiJVQJk/",
-                viewCount: 437,
-                date: "7-29-26"
+                title: "Video 2",
+                facebookLink: "https://www.facebook.com/startupzcoworking/videos/YOUR-VIDEO-ID-2/",
+                viewCount: 273,
+                date: "7-10-26"
             },
             {
-                title: "7-29-26 (3) voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1cBgQripVS/",
-                viewCount: 372,
-                date: "7-29-26"
-            },
-            {
-                title: "7-29-26 (4)",
-                facebookLink: "https://www.facebook.com/share/r/1BYs7VQQG4/",
-                viewCount: 248,
-                date: "7-29-26"
-            },
-            {
-                title: "7-29-26 (5) voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1JgLVcJqBX/",
-                viewCount: 296,
-                date: "7-29-26"
-            },
-            {
-                title: "7-30-26 (1)voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1Ey6QzTgzV/",
-                viewCount: 401,
-                date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (2)",
-                facebookLink: "https://www.facebook.com/share/r/1c6b8VGLCW/",
-                viewCount: 576,
-                date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (3)",
-                facebookLink: "https://www.facebook.com/share/r/1AMD74eo36/",
-                viewCount: 159,
-                date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (4)",
-                facebookLink: "https://www.facebook.com/share/r/1PnhDbytG8/",
-                viewCount: 80,
-                date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (5)",
-                facebookLink: "https://www.facebook.com/share/r/1Vc1LDb6hU/",
-                viewCount: 99,
-                date: "7-30-26"
-            },
-            {
-                title: "7-31-26 (1)",
-                facebookLink: "https://www.facebook.com/share/r/1Cs33HgMs8/",
-                viewCount: 365,
-                date: "7-31-26"
-            },
-            {
-                title: "7-31-26 (2)",
-                facebookLink: "https://www.facebook.com/share/r/1LAtgEZrad/",
-                viewCount: 335,
-                date: "7-31-26"
-            },
-            {
-                title: "7-31-26 (3)",
-                facebookLink: "https://www.facebook.com/share/r/185ocXTw3o/",
-                viewCount: 309,
-                date: "7-31-26"
-            },
-            {
-                title: "7-31-26 (4)",
-                facebookLink: "https://www.facebook.com/share/r/14jyCSdR1tg/",
-                viewCount: 1261,
-                date: "7-31-26"
+                title: "Video 3",
+                facebookLink: "https://www.facebook.com/startupzcoworking/videos/YOUR-VIDEO-ID-3/",
+                viewCount: 1250,
+                date: "7-11-26"
             }
         ];
 
-        function getEmbedUrl(url) {
-    return "https://www.facebook.com/plugins/video.php?href=" +
-        encodeURIComponent(url) +
-        "&show_text=false&autoplay=true";
-        }
-
         function openModal(video) {
-
-    document.getElementById('modalTitle').textContent = video.title;
-
-    document.getElementById('modalStats').textContent =
-        `${video.viewCount.toLocaleString()} views`;
-
-    document.getElementById('openFacebookBtn').href =
-        video.facebookLink;
-
-    const embedContainer =
-        document.getElementById('videoEmbedContainer');
-
-    embedContainer.innerHTML = `
-        <iframe
-            src="${getEmbedUrl(video.facebookLink)}"
-            width="100%"
-            height="100%"
-            style="border:none;overflow:hidden"
-            scrolling="no"
-            frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-        </iframe>
-    `;
-
-    document.getElementById('videoModal').classList.add('active');
+            document.getElementById('modalTitle').textContent = video.title;
+            document.getElementById('modalStats').textContent = `${video.viewCount.toLocaleString()} views`;
+            document.getElementById('openFacebookBtn').href = video.facebookLink;
+            
+            const embedContainer = document.getElementById('videoEmbedContainer');
+            embedContainer.innerHTML = `<iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(video.facebookLink)}&width=500&show_text=false" width="500" height="590" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`;
+            
+            document.getElementById('videoModal').classList.add('active');
         }
-        }
+
         function closeModal() {
             document.getElementById('videoModal').classList.remove('active');
             document.getElementById('videoEmbedContainer').innerHTML = '';
