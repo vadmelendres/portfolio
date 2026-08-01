@@ -359,26 +359,40 @@
             }
         ];
 
-        function extractVideoId(url) {
-            const match = url.match(/video\/(\d+)/);
-            return match ? match[1] : null;
+        function getEmbedUrl(url) {
+    return "https://www.facebook.com/plugins/video.php?href=" +
+        encodeURIComponent(url) +
+        "&show_text=false&autoplay=true";
         }
 
         function openModal(video) {
-            const videoId = extractVideoId(video.facebookLink);
-            
-            document.getElementById('modalTitle').textContent = video.title;
-            document.getElementById('modalStats').textContent = `${video.viewCount.toLocaleString()} views`;
-            document.getElementById('openFacebookBtn').href = video.facebookLink;
-            
-            const embedContainer = document.getElementById('videoEmbedContainer');
-            embedContainer.innerHTML = `<iframe src="https://www.tiktok.com/embed/v2/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-            
-            document.getElementById('videoModal').classList.add('active');
-            
-            if (window.tiktok && window.tiktok.embed) {
-                window.tiktok.embed.lib.render(document.getElementById('videoModal'));
-            }
+
+    document.getElementById('modalTitle').textContent = video.title;
+
+    document.getElementById('modalStats').textContent =
+        `${video.viewCount.toLocaleString()} views`;
+
+    document.getElementById('openFacebookBtn').href =
+        video.facebookLink;
+
+    const embedContainer =
+        document.getElementById('videoEmbedContainer');
+
+    embedContainer.innerHTML = `
+        <iframe
+            src="${getEmbedUrl(video.facebookLink)}"
+            width="100%"
+            height="100%"
+            style="border:none;overflow:hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+    `;
+
+    document.getElementById('videoModal').classList.add('active');
+}
         }
 
         function closeModal() {
@@ -436,11 +450,6 @@
             sorted.forEach(video => {
                 allContainer.appendChild(createVideoCard(video));
             });
-
-            // Load TikTok embed script
-            const script = document.createElement('script');
-            script.src = 'https://www.tiktok.com/embed.js';
-            document.body.appendChild(script);
         }
 
         // Close modal when clicking outside
