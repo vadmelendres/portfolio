@@ -15,34 +15,22 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
             background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
             color: #e0e0e0;
-            line-height: 1.6;
         }
 
         header {
             background: rgba(20, 20, 20, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 3rem 2rem;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
             background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 0.5rem;
         }
 
         .tagline {
@@ -59,10 +47,7 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
             box-shadow: 0 8px 25px rgba(255, 107, 107, 0.25);
         }
 
@@ -77,10 +62,6 @@
             padding: 4rem 2rem;
         }
 
-        .section {
-            margin-bottom: 5rem;
-        }
-
         .section-title {
             font-size: 1.8rem;
             font-weight: 700;
@@ -91,28 +72,20 @@
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            margin-bottom: 4rem;
         }
 
         .video-card {
             background: rgba(30, 30, 30, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
-            overflow: hidden;
+            padding: 2rem;
             transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: block;
         }
 
         .video-card:hover {
@@ -121,41 +94,17 @@
             box-shadow: 0 15px 40px rgba(255, 107, 107, 0.15);
         }
 
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 177.78%;
-            background: #000;
-            overflow: hidden;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-info {
-            padding: 1.3rem;
-        }
-
         .video-title {
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.8rem;
-            line-height: 1.4;
+            margin-bottom: 1rem;
             color: #ffffff;
         }
 
         .video-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: #888;
+            margin-bottom: 1.5rem;
         }
 
         .view-count {
@@ -163,36 +112,36 @@
             color: #ff8c42;
         }
 
-        .viral-badge {
+        .good-badge {
             background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
             color: white;
-            padding: 0.35rem 0.9rem;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            margin-left: 0.5rem;
         }
 
-        .empty-state {
-            text-align: center;
-            padding: 3rem 2rem;
-            color: #666;
-            grid-column: 1 / -1;
+        .watch-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .empty-state-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.5;
+        .video-card:hover .watch-button {
+            transform: scale(1.05);
         }
 
         footer {
             background: rgba(20, 20, 20, 0.95);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
             padding: 2rem;
-            margin-top: 4rem;
             color: #666;
         }
 
@@ -201,17 +150,8 @@
                 font-size: 2rem;
             }
 
-            .section-title {
-                font-size: 1.4rem;
-            }
-
             .video-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 1.5rem;
-            }
-
-            header {
-                padding: 2rem 1rem;
+                grid-template-columns: 1fr;
             }
 
             .container {
@@ -222,20 +162,18 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>Startup Z Coworking</h1>
-            <p class="tagline">Video Content Portfolio</p>
-            <a href="https://www.tiktok.com/@startupzcoworkingph" class="cta-button" target="_blank">View Full Profile</a>
-        </div>
+        <h1>Startup Z Coworking</h1>
+        <p class="tagline">Video Content Portfolio</p>
+        <a href="https://www.tiktok.com/@startupzcoworkingph" class="cta-button" target="_blank">View Full Profile on TikTok</a>
     </header>
 
     <main class="container">
-        <section class="section">
+        <section>
             <h2 class="section-title">⭐ Good Performing</h2>
-            <div id="viral-videos" class="video-grid"></div>
+            <div id="good-videos" class="video-grid"></div>
         </section>
 
-        <section class="section">
+        <section>
             <h2 class="section-title">All Videos</h2>
             <div id="all-videos" class="video-grid"></div>
         </section>
@@ -251,46 +189,42 @@
         // ============================================
         const videos = [
             {
-                title: "1",
+                title: "8-7-26",
                 tiktokLink: "https://www.tiktok.com/@startupzcoworkingph/video/7659992060459552008",
                 viewCount: 276,
                 date: "8-7-26"
+            },
+            {
+                title: "Executive Desks & High-Speed WiFi",
+                tiktokLink: "https://www.tiktok.com/@startupzcoworkingph/video/7660854512214707463",
+                viewCount: 273,
+                date: "8-10-26"
             }
-            // TO ADD MORE VIDEOS, COPY THIS BELOW AND FILL IN YOUR INFO:
+            // TO ADD MORE VIDEOS, COPY THIS AND FILL IN YOUR INFO:
             // ,
             // {
-            //     title: "YOUR VIDEO TITLE",
+            //     title: "Your Video Title",
             //     tiktokLink: "https://www.tiktok.com/@startupzcoworkingph/video/YOUR-VIDEO-ID",
             //     viewCount: 5000,
             //     date: "8-8-26"
             // }
         ];
 
-        function extractTikTokId(url) {
-            if (!url) return null;
-            const match = url.match(/video\/(\d+)/);
-            return match ? match[1] : null;
-        }
-
         function createVideoCard(video) {
-            const videoId = extractTikTokId(video.tiktokLink);
-            if (!videoId) return null;
-
-            const isViral = video.viewCount >= 10000;
-            const card = document.createElement('div');
+            const isGood = video.viewCount >= 1000;
+            
+            const card = document.createElement('a');
+            card.href = video.tiktokLink;
+            card.target = '_blank';
             card.className = 'video-card';
 
             card.innerHTML = `
-                <div class="video-wrapper">
-                    <iframe src="https://www.tiktok.com/embed/v2/${videoId}" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3 class="video-title">${video.title}</h3>
+                <div class="video-stats">
+                    <span class="view-count">${video.viewCount.toLocaleString()} views</span>
+                    ${isGood ? '<span class="good-badge">✓ Good</span>' : ''}
                 </div>
-                <div class="video-info">
-                    <h3 class="video-title">${video.title}</h3>
-                    <div class="video-stats">
-                        <span class="view-count">${video.viewCount.toLocaleString()} views</span>
-                        ${isViral ? '<span class="viral-badge">Viral 🚀</span>' : ''}
-                    </div>
-                </div>
+                <span class="watch-button">Watch Video →</span>
             `;
 
             return card;
@@ -298,53 +232,34 @@
 
         function renderPortfolio() {
             if (videos.length === 0) {
-                document.getElementById('viral-videos').innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📹</div>
-                        <p>No videos yet!</p>
-                    </div>
-                `;
-                document.getElementById('all-videos').innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📹</div>
-                        <p>No videos yet!</p>
-                    </div>
-                `;
+                document.getElementById('good-videos').innerHTML = '<p style="text-align: center; color: #666;">No videos yet!</p>';
+                document.getElementById('all-videos').innerHTML = '<p style="text-align: center; color: #666;">No videos yet!</p>';
                 return;
             }
 
             const sorted = [...videos].sort((a, b) => b.viewCount - a.viewCount);
-            const viralVideos = sorted.filter(v => v.viewCount >= 1000);
+            const goodVideos = sorted.filter(v => v.viewCount >= 1000);
 
-            const viralContainer = document.getElementById('viral-videos');
-            if (viralVideos.length === 0) {
-                viralContainer.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">🌟</div>
-                        <p>No good performing videos yet (1K+ views). Keep creating!</p>
-                    </div>
-                `;
+            // Render good performing videos
+            const goodContainer = document.getElementById('good-videos');
+            if (goodVideos.length === 0) {
+                goodContainer.innerHTML = '<p style="text-align: center; color: #666;">No good performing videos yet (1K+ views).</p>';
             } else {
-                viralContainer.innerHTML = '';
-                viralVideos.forEach(video => {
-                    const card = createVideoCard(video);
-                    if (card) viralContainer.appendChild(card);
+                goodContainer.innerHTML = '';
+                goodVideos.forEach(video => {
+                    goodContainer.appendChild(createVideoCard(video));
                 });
             }
 
+            // Render all videos
             const allContainer = document.getElementById('all-videos');
             allContainer.innerHTML = '';
             sorted.forEach(video => {
-                const card = createVideoCard(video);
-                if (card) allContainer.appendChild(card);
+                allContainer.appendChild(createVideoCard(video));
             });
-
-            const script = document.createElement('script');
-            script.src = 'https://www.tiktok.com/embed.js';
-            document.body.appendChild(script);
         }
 
-        window.addEventListener('load', renderPortfolio);
+        renderPortfolio();
     </script>
 </body>
 </html>
