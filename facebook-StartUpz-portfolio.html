@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StartUpz Coworking - Video Portfolio</title>
+    <title>Startup Z Coworking - Video Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -26,7 +26,7 @@
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -41,19 +41,19 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
             color: white;
             padding: 0.9rem 2.2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.25);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.35);
         }
 
         .container {
@@ -67,7 +67,7 @@
             font-weight: 700;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid rgba(37, 99, 235, 0.25);
+            border-bottom: 2px solid rgba(255, 107, 107, 0.3);
         }
 
         .video-grid {
@@ -91,7 +91,7 @@
         .video-card:hover {
             border-color: rgba(255, 107, 107, 0.5);
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.15);
         }
 
         .video-title {
@@ -103,17 +103,17 @@
 
         .video-stats {
             font-size: 1rem;
-            color: #2367eb;
+            color: #888;
             margin-bottom: 1.5rem;
         }
 
         .view-count {
             font-weight: 600;
-            color: #2367eb;
+            color: #ff8c42;
         }
 
         .good-badge {
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
             color: white;
             padding: 0.4rem 1rem;
             border-radius: 20px;
@@ -193,13 +193,13 @@
         }
 
         .modal-video-stats {
-            color: #64748B;
+            color: #888;
             font-size: 1rem;
         }
 
-        .open-facebook-button {
+        .open-tiktok-button {
             display: inline-block;
-            background: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
@@ -209,7 +209,7 @@
             transition: all 0.3s ease;
         }
 
-        .open-facebook-button:hover {
+        .open-tiktok-button:hover {
             transform: translateY(-2px);
         }
 
@@ -217,7 +217,7 @@
             background: rgba(20, 20, 20, 0.95);
             text-align: center;
             padding: 2rem;
-            color: #64748B;
+            color: #666;
         }
 
         @media (max-width: 768px) {
@@ -239,7 +239,7 @@
     <header>
         <h1>StartUpz Coworking</h1>
         <p class="tagline">Video Content Portfolio</p>
-        <a href="https://www.facebook.com/StartUpzCoWorkingSpace/" class="cta-button" target="_blank">View Full Profile on Facebook</a>
+        <a href="https://www.tiktok.com/@startupzcoworkingph" class="cta-button" target="_blank">View Full Profile on TikTok</a>
     </header>
 
     <main class="container">
@@ -260,7 +260,7 @@
             <div class="video-embed-container" id="videoEmbedContainer"></div>
             <h3 class="modal-video-title" id="modalTitle"></h3>
             <div class="modal-video-stats" id="modalStats"></div>
-            <a id="openFacebookBtn" href="#" target="_blank" class="open-facebook-button">Open on Facebook →</a>
+            <a id="openFacebookBtn" href="#" target="_blank" class="open-tiktok-button">Watch on Facebook →</a>
         </div>
     </div>
 
@@ -274,120 +274,183 @@
         // ============================================
         const videos = [
             {
-                title: "7-29-26 (1) voiceover",
-                facebookLink: "https://www.facebook.com/reel/1229082502654808/",
-                viewCount: 402,
-                date: "July 29-26"
+                title: "7-8-26 voiceover",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7659992060459552008",
+                viewCount: 276,
+                date: "7-8-26"
             },
             {
-                title: "7-29-26 (2) voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1E6eiJVQJk/",
-                viewCount: 437,
+                title: "7-10-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7660854512214707463",
+                viewCount: 273,
+                date: "7-10-26"
+            },
+            {
+                title: "7-11-26 voiceover",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7661238461277457671",
+                viewCount: 217,
+                date: "7-11-26"
+            },
+            {
+                title: "7-12-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7661600750732135698",
+                viewCount: 659,
+                date: "7-12-26"
+            },
+            {
+                title: "7-13-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7661935124728024338",
+                viewCount: 414,
+                date: "7-13-26"
+            },
+            {
+                title: "7-14-26 voiceover",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7662200990598319367",
+                viewCount: 197,
+                date: "7-14-26"
+            },
+            {
+                title: "7-15-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7662585119491902728",
+                viewCount: 638,
+                date: "7-15-26"
+            },
+            {
+                title: "7-16-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7662956540390837511",
+                viewCount: 173,
+                date: "7-16-26"
+            },
+            {
+                title: "7-17-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7663330082051689736",
+                viewCount: 713,
+                date: "7-17-26"
+            },
+            {
+                title: "7-17-26 voiceover",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7663431370600942856",
+                viewCount: 213,
+                date: "7-17-26"
+            },
+            {
+                title: "7-18-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7663814692799827208",
+                viewCount: 700,
+                date: "7-18-26"
+            },
+            {
+                title: "7-19-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7664080052019072274",
+                viewCount: 707,
+                date: "7-19-26"
+            },
+            {
+                title: "7-21-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7664904530387045640",
+                viewCount: 507,
+                date: "7-21-26"
+            },
+            {
+                title: "7-22-26 (1)",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7665196278170668306",
+                viewCount: 14500,
+                date: "7-22-26"
+            },
+            {
+                title: "7-22-26 (2)",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7665275405309332743",
+                viewCount: 535,
+                date: "7-22-26"
+            },
+            {
+                title: "7-24-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7665926522812861703",
+                viewCount: 673,
+                date: "7-24-26"
+            },
+            {
+                title: "7-25-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7666303709701295367",
+                viewCount: 681,
+                date: "7-25-26"
+            },
+            {
+                title: "7-26-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7666706188989484306",
+                viewCount: 1015,
+                date: "7-26-26"
+            },
+            {
+                title: "7-27-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7667040847610809608",
+                viewCount: 320,
+                date: "7-27-26"
+            },
+            {
+                title: "7-28-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7667424431010057480",
+                viewCount: 194,
+                date: "7-28-26"
+            },
+            {
+                title: "7-29-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7667940160494996744",
+                viewCount: 877,
                 date: "7-29-26"
             },
             {
-                title: "7-29-26 (3) voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1cBgQripVS/",
-                viewCount: 372,
-                date: "7-29-26"
-            },
-            {
-                title: "7-29-26 (4)",
-                facebookLink: "https://www.facebook.com/share/r/1BYs7VQQG4/",
-                viewCount: 248,
-                date: "7-29-26"
-            },
-            {
-                title: "7-29-26 (5) voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1JgLVcJqBX/",
-                viewCount: 296,
-                date: "7-29-26"
-            },
-            {
-                title: "7-30-26 (1)voiceover",
-                facebookLink: "https://www.facebook.com/share/r/1Ey6QzTgzV/",
-                viewCount: 401,
+                title: "7-30-26",
+                facebookLink: "https://www.tiktok.com/@startupzcoworkingph/video/7668302269409938695",
+                viewCount: 640,
                 date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (2)",
-                facebookLink: "https://www.facebook.com/share/r/1c6b8VGLCW/",
-                viewCount: 576,
-                date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (3)",
-                facebookLink: "https://www.facebook.com/share/r/1AMD74eo36/",
-                viewCount: 159,
-                date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (4)",
-                facebookLink: "https://www.facebook.com/share/r/1PnhDbytG8/",
-                viewCount: 80,
-                date: "7-30-26"
-            },
-            {
-                title: "7-30-26 (5)",
-                facebookLink: "https://www.facebook.com/share/r/1Vc1LDb6hU/",
-                viewCount: 99,
-                date: "7-30-26"
-            },
-            {
-                title: "7-31-26 (1)",
-                facebookLink: "https://www.facebook.com/share/r/1Cs33HgMs8/",
-                viewCount: 365,
-                date: "7-31-26"
-            },
-            {
-                title: "7-31-26 (2)",
-                facebookLink: "https://www.facebook.com/share/r/1LAtgEZrad/",
-                viewCount: 335,
-                date: "7-31-26"
-            },
-            {
-                title: "7-31-26 (3)",
-                facebookLink: "https://www.facebook.com/share/r/185ocXTw3o/",
-                viewCount: 309,
-                date: "7-31-26"
-            },
-            {
-                title: "7-31-26 (4)",
-                facebookLink: "https://www.facebook.com/share/r/14jyCSdR1tg/",
-                viewCount: 1261,
-                date: "7-31-26"
             }
         ];
 
-        function extractVideoId(url) {
-            const match = url.match(/video\/(\d+)/);
-            return match ? match[1] : null;
-        }
-
         function openModal(video) {
-            const videoId = extractVideoId(video.facebookLink);
-            
-            document.getElementById('modalTitle').textContent = video.title;
-            document.getElementById('modalStats').textContent = `${video.viewCount.toLocaleString()} views`;
-            document.getElementById('openFacebookBtn').href = video.facebookLink;
-            
-            const embedContainer = document.getElementById('videoEmbedContainer');
-            embedContainer.innerHTML = `
-<iframe
-    src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(video.facebookLink)}&show_text=false"
-    width="500"
-    height="700"
-    style="border:none;overflow:hidden"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen>
-</iframe>`;
-            
-            document.getElementById('videoModal').classList.add('active');
-            
-            if (window.facebook && window.facebook.embed) {
-                window.facebook.embed.lib.render(document.getElementById('videoModal'));
-            }
+
+    document.getElementById('modalTitle').textContent = video.title;
+
+    document.getElementById('modalStats').innerHTML =
+        `
+        👁 ${video.viewCount.toLocaleString()} views<br><br>
+        📅 ${video.date}
+        `;
+
+    document.getElementById('videoEmbedContainer').innerHTML = `
+        <div style="
+            background:#1f2937;
+            border-radius:12px;
+            padding:40px;
+            text-align:center;
+            color:white;
+        ">
+            <h2 style="margin-bottom:15px;">Facebook Reel</h2>
+
+            <p style="margin-bottom:25px;color:#bbb;">
+                This portfolio stores Facebook Reels externally.
+                Click below to watch.
+            </p>
+
+            <a
+                href="${video.facebookLink}"
+                target="_blank"
+                style="
+                    display:inline-block;
+                    padding:15px 30px;
+                    background:#2563EB;
+                    color:white;
+                    border-radius:8px;
+                    text-decoration:none;
+                    font-weight:bold;
+                ">
+                ▶ Watch on Facebook
+            </a>
+        </div>
+    `;
+
+    document.getElementById("videoModal").classList.add("active");
+}
         }
 
         function closeModal() {
@@ -446,9 +509,8 @@
                 allContainer.appendChild(createVideoCard(video));
             });
 
-            // Load Facebook embed script
+            // Load TikTok embed script
             const script = document.createElement('script');
-            script.src = 'https://www.facebook.com/embed.js';
             document.body.appendChild(script);
         }
 
