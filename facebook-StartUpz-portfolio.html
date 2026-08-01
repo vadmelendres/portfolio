@@ -176,6 +176,15 @@
             margin-bottom: 1.5rem;
         }
 
+        .video-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
         .modal-video-title {
             font-size: 1.3rem;
             font-weight: 600;
@@ -230,7 +239,7 @@
     <header>
         <h1>StartUpz Coworking</h1>
         <p class="tagline">Video Content Portfolio</p>
-        <a href="https://www.tiktok.com/@startupzcoworkingph" class="cta-button" target="_blank">View Full Profile on TikTok</a>
+        <a href="https://www.tiktok.com/@startupzcoworkingph" class="cta-button" target="_blank">View Full Facebook Page</a>
     </header>
 
     <main class="container">
@@ -251,7 +260,7 @@
             <div class="video-embed-container" id="videoEmbedContainer"></div>
             <h3 class="modal-video-title" id="modalTitle"></h3>
             <div class="modal-video-stats" id="modalStats"></div>
-            <a id="openFacebookBtn" href="#" target="_blank" class="open-tiktok-button">Watch on Facebook →</a>
+            <a id="openFacebookBtn" href="#" target="_blank" class="open-tiktok-button">Open on Facebook →</a>
         </div>
     </div>
 
@@ -402,45 +411,27 @@
 
     document.getElementById('modalTitle').textContent = video.title;
 
-    document.getElementById('modalStats').innerHTML =
-        `
-        👁 ${video.viewCount.toLocaleString()} views<br><br>
-        📅 ${video.date}
-        `;
+    document.getElementById('modalStats').textContent =
+        `${video.viewCount.toLocaleString()} views`;
 
-    document.getElementById('videoEmbedContainer').innerHTML = `
-        <div style="
-            background:#1f2937;
-            border-radius:12px;
-            padding:40px;
-            text-align:center;
-            color:white;
-        ">
-            <h2 style="margin-bottom:15px;">Facebook Reel</h2>
+    document.getElementById('openFacebookBtn').href = video.facebookLink;
 
-            <p style="margin-bottom:25px;color:#bbb;">
-                This portfolio stores Facebook Reels externally.
-                Click below to watch.
-            </p>
+    const embedContainer = document.getElementById('videoEmbedContainer');
 
-            <a
-                href="${video.facebookLink}"
-                target="_blank"
-                style="
-                    display:inline-block;
-                    padding:15px 30px;
-                    background:#2563EB;
-                    color:white;
-                    border-radius:8px;
-                    text-decoration:none;
-                    font-weight:bold;
-                ">
-                ▶ Watch on Facebook
-            </a>
-        </div>
+    embedContainer.innerHTML = `
+        <iframe
+            src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(video.facebookLink)}&show_text=false&width=500"
+            width="100%"
+            height="600"
+            style="border:none;overflow:hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
     `;
 
-    document.getElementById("videoModal").classList.add("active");
+    document.getElementById('videoModal').classList.add('active');
 }
         }
 
@@ -500,9 +491,6 @@
                 allContainer.appendChild(createVideoCard(video));
             });
 
-            // Load TikTok embed script
-            const script = document.createElement('script');
-            document.body.appendChild(script);
         }
 
         // Close modal when clicking outside
