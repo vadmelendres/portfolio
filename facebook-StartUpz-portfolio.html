@@ -365,6 +365,8 @@
         }
 
         function openModal(video) {
+    window.open(video.facebookLink, "_blank");
+}
             const videoId = extractVideoId(video.facebookLink);
             
             document.getElementById('modalTitle').textContent = video.title;
