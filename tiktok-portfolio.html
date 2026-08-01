@@ -408,7 +408,13 @@
             }
 
             // Parse data (skip header row)
-            const videos = [];
+            const videos = [{
+        title: "Freelancer",
+        tiktokLink: "https://www.tiktok.com/@startupzcoworkingph/video/7659992060459552008",
+        viewCount: 276,
+        date: "8-7-26"
+    }
+                           ];
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i];
                 if (row.length >= 2 && row[1]) { // At least title and TikTok link
