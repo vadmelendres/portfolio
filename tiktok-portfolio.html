@@ -18,7 +18,6 @@
             line-height: 1.6;
         }
 
-        /* Header */
         header {
             background: rgba(20, 20, 20, 0.95);
             backdrop-filter: blur(10px);
@@ -72,14 +71,12 @@
             box-shadow: 0 12px 35px rgba(255, 107, 107, 0.35);
         }
 
-        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
 
-        /* Section */
         .section {
             margin-bottom: 5rem;
         }
@@ -90,20 +87,8 @@
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 2px solid rgba(255, 107, 107, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
         }
 
-        .section-icon {
-            width: 8px;
-            height: 8px;
-            background: #ff6b6b;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        /* Video Grid */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -128,7 +113,6 @@
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .video-card:hover {
@@ -140,7 +124,7 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 177.78%; /* 9:16 aspect ratio */
+            padding-bottom: 177.78%;
             background: #000;
             overflow: hidden;
         }
@@ -190,11 +174,11 @@
             letter-spacing: 0.5px;
         }
 
-        /* Empty State */
         .empty-state {
             text-align: center;
             padding: 3rem 2rem;
             color: #666;
+            grid-column: 1 / -1;
         }
 
         .empty-state-icon {
@@ -203,33 +187,6 @@
             opacity: 0.5;
         }
 
-        .empty-state p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Loading State */
-        .loading {
-            text-align: center;
-            padding: 3rem;
-        }
-
-        .spinner {
-            border: 3px solid rgba(255, 107, 107, 0.2);
-            border-top: 3px solid #ff6b6b;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Footer */
         footer {
             background: rgba(20, 20, 20, 0.95);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -239,7 +196,6 @@
             color: #666;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -262,16 +218,6 @@
                 padding: 2rem 1rem;
             }
         }
-
-        /* Error Message */
-        .error-message {
-            background: rgba(255, 107, 107, 0.1);
-            border: 1px solid rgba(255, 107, 107, 0.3);
-            color: #ff8c42;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
     </style>
 </head>
 <body>
@@ -284,101 +230,64 @@
     </header>
 
     <main class="container">
-        <!-- Viral Videos Section -->
         <section class="section">
-            <h2 class="section-title">
-                <span class="section-icon"></span>
-                🔥 Viral Videos
-            </h2>
-            <div id="viral-videos" class="video-grid">
-                <div class="loading">
-                    <div class="spinner"></div>
-                </div>
-            </div>
+            <h2 class="section-title">⭐ Good Performing</h2>
+            <div id="viral-videos" class="video-grid"></div>
         </section>
 
-        <!-- All Videos Section -->
         <section class="section">
-            <h2 class="section-title">
-                <span class="section-icon"></span>
-                All Videos
-            </h2>
-            <div id="all-videos" class="video-grid">
-                <div class="loading">
-                    <div class="spinner"></div>
-                </div>
-            </div>
+            <h2 class="section-title">All Videos</h2>
+            <div id="all-videos" class="video-grid"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Startup Z Coworking. All videos produced and edited by Vad.</p>
+        <p>&copy; 2026 Startup Z Coworking. Videos by Vad.</p>
     </footer>
 
     <script>
-        // Google Sheet ID and API Configuration
-        const SHEET_ID = '1XWfjUnJnVeoCw_9eT17AjT9VhIqkZVXQD4FwsyNWEsk';
-        const SHEET_RANGE = 'Sheet1!A1:D1000';
-        const API_KEY = 'AIzaSyDvwvWxnhS7zXl6T7qJsV3pJ7kLZ7k7k7k'; // Public API key (limited)
-
-        // Alternative: Using public sheet data
-        async function fetchVideosFromSheet() {
-            try {
-                // Using Google Sheets API v4
-                const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_RANGE}?key=AIzaSyADaVLbgHW-xbSVMpKLYKcvmxAkj6dSHH0`;
-                
-                const response = await fetch(url);
-                
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data from Google Sheets');
-                }
-
-                const data = await response.json();
-                return data.values || [];
-            } catch (error) {
-                console.error('Error fetching sheet:', error);
-                return [];
+        // ============================================
+        // EDIT YOUR VIDEOS HERE
+        // ============================================
+        const videos = [
+            {
+                title: "1",
+                tiktokLink: "https://www.tiktok.com/@startupzcoworkingph/video/7659992060459552008",
+                viewCount: 276,
+                date: "8-7-26"
             }
-        }
+            // TO ADD MORE VIDEOS, COPY THIS BELOW AND FILL IN YOUR INFO:
+            // ,
+            // {
+            //     title: "YOUR VIDEO TITLE",
+            //     tiktokLink: "https://www.tiktok.com/@startupzcoworkingph/video/YOUR-VIDEO-ID",
+            //     viewCount: 5000,
+            //     date: "8-8-26"
+            // }
+        ];
 
         function extractTikTokId(url) {
-            // Extract TikTok video ID from various URL formats
             if (!url) return null;
-            
-            const patterns = [
-                /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[\w\.]+\/video\/(\d+)/,
-                /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/v\/(\d+)/,
-                /(?:https?:\/\/)?(?:vm\.)?tiktok\.com\/(\w+)/
-            ];
-
-            for (let pattern of patterns) {
-                const match = url.match(pattern);
-                if (match) return match[1];
-            }
-            return null;
+            const match = url.match(/video\/(\d+)/);
+            return match ? match[1] : null;
         }
 
-        function createVideoCard(title, tiktokUrl, viewCount, isViral) {
-            const videoId = extractTikTokId(tiktokUrl);
-            
-            if (!videoId) {
-                console.warn('Could not extract video ID from:', tiktokUrl);
-                return null;
-            }
+        function createVideoCard(video) {
+            const videoId = extractTikTokId(video.tiktokLink);
+            if (!videoId) return null;
 
+            const isViral = video.viewCount >= 10000;
             const card = document.createElement('div');
             card.className = 'video-card';
 
-            const embedUrl = `https://www.tiktok.com/embed/v2/${videoId}`;
-            
             card.innerHTML = `
                 <div class="video-wrapper">
                     <iframe src="https://www.tiktok.com/embed/v2/${videoId}" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">${title || 'Untitled Video'}</h3>
+                    <h3 class="video-title">${video.title}</h3>
                     <div class="video-stats">
-                        <span class="view-count">${(viewCount || 0).toLocaleString()} views</span>
+                        <span class="view-count">${video.viewCount.toLocaleString()} views</span>
                         ${isViral ? '<span class="viral-badge">Viral 🚀</span>' : ''}
                     </div>
                 </div>
@@ -387,89 +296,54 @@
             return card;
         }
 
-        async function renderPortfolio() {
-            const rows = await fetchVideosFromSheet();
-            
-            if (rows.length <= 1) {
-                // Only header or empty
+        function renderPortfolio() {
+            if (videos.length === 0) {
                 document.getElementById('viral-videos').innerHTML = `
-                    <div class="empty-state" style="grid-column: 1/-1;">
+                    <div class="empty-state">
                         <div class="empty-state-icon">📹</div>
-                        <p>No videos yet. Add videos to your Google Sheet to see them here!</p>
+                        <p>No videos yet!</p>
                     </div>
                 `;
                 document.getElementById('all-videos').innerHTML = `
-                    <div class="empty-state" style="grid-column: 1/-1;">
+                    <div class="empty-state">
                         <div class="empty-state-icon">📹</div>
-                        <p>No videos yet. Add videos to your Google Sheet to see them here!</p>
+                        <p>No videos yet!</p>
                     </div>
                 `;
                 return;
             }
 
-            // Parse data (skip header row)
-            const videos = [{
-        title: "Freelancer",
-        tiktokLink: "https://www.tiktok.com/@startupzcoworkingph/video/7659992060459552008",
-        viewCount: 276,
-        date: "8-7-26"
-    }
-                           ];
-            for (let i = 1; i < rows.length; i++) {
-                const row = rows[i];
-                if (row.length >= 2 && row[1]) { // At least title and TikTok link
-                    videos.push({
-                        title: row[0] || 'Untitled',
-                        tiktokLink: row[1],
-                        viewCount: parseInt(row[2]) || 0,
-                        date: row[3] || ''
-                    });
-                }
-            }
+            const sorted = [...videos].sort((a, b) => b.viewCount - a.viewCount);
+            const viralVideos = sorted.filter(v => v.viewCount >= 1000);
 
-            // Sort by view count (descending)
-            videos.sort((a, b) => b.viewCount - a.viewCount);
-
-            // Separate viral (10K+) and regular videos
-            const viralVideos = videos.filter(v => v.viewCount >= 10000);
-            const allVideos = videos;
-
-            // Render viral videos
             const viralContainer = document.getElementById('viral-videos');
             if (viralVideos.length === 0) {
                 viralContainer.innerHTML = `
-                    <div class="empty-state" style="grid-column: 1/-1;">
+                    <div class="empty-state">
                         <div class="empty-state-icon">🌟</div>
-                        <p>No viral videos yet. Keep creating!</p>
+                        <p>No good performing videos yet (1K+ views). Keep creating!</p>
                     </div>
                 `;
             } else {
                 viralContainer.innerHTML = '';
                 viralVideos.forEach(video => {
-                    const card = createVideoCard(video.title, video.tiktokLink, video.viewCount, true);
+                    const card = createVideoCard(video);
                     if (card) viralContainer.appendChild(card);
                 });
             }
 
-            // Render all videos
             const allContainer = document.getElementById('all-videos');
             allContainer.innerHTML = '';
-            allVideos.forEach(video => {
-                const card = createVideoCard(video.title, video.tiktokLink, video.viewCount, video.viewCount >= 10000);
+            sorted.forEach(video => {
+                const card = createVideoCard(video);
                 if (card) allContainer.appendChild(card);
             });
 
-            // Load TikTok embed script
-            if (window.tiktok) {
-                window.tiktok.embed.lib.render(document.body);
-            } else {
-                const script = document.createElement('script');
-                script.src = 'https://www.tiktok.com/embed.js';
-                document.body.appendChild(script);
-            }
+            const script = document.createElement('script');
+            script.src = 'https://www.tiktok.com/embed.js';
+            document.body.appendChild(script);
         }
 
-        // Render on page load
         window.addEventListener('load', renderPortfolio);
     </script>
 </body>
